@@ -1,4 +1,4 @@
-# Contact List application using React and Redux
+# Contact list application using React and Redux
 Contact list application written in [React](https://reactjs.org/) and [Redux](https://redux.js.org/) (for demonstration purpose only)
 
 The application is located on [my portfolio site](http://www.dnwebfolio.com/index.php#spa).
