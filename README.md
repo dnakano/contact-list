@@ -15,7 +15,7 @@ Source codes are located in the **src/** directory:
 * **src/stylesheets/** - Sass stylesheet used globally among all applications
 * **src/utils/** - Utility JavaScript functions used globally among all applications
 
-![Shopping Bag app](img/ShoppingBagApp.PNG)
+![Contact app](img/ContactApp.PNG)
 
 Technologies used: **Babel, ESLint, JavaScript (ES6+), JSX, PostCSS, React, Redux, Sass, webpack**
 
