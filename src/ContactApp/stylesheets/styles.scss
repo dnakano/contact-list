@@ -1,0 +1,308 @@
+// import partials
+@import "variables";
+@import "mixins";
+@import "placeholders";
+
+#ContactApp {
+  // Buttons
+  button {
+    color: $color-white;
+    background-color: $color-blue;
+    width: auto;
+    padding: 10px 16px;
+    margin: 0;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  // Text
+  .capitalize {
+    text-transform: capitalize;
+  }
+
+  // Errors
+  .errorInput {
+    border: 1px solid $color-warn;
+  }
+
+  .ErrorMessage {
+    display: inline-block;
+    width: 100%;
+    color: $color-warn;
+    font-style: italic;
+    text-align: left;
+
+    b, i {
+      @include word-wrap;
+    }
+  }
+
+  // Header component
+  .Header {
+    @include flex-container(column);
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.7em;
+    background-color: $color-blue-light;
+
+    @include mq-md-up {
+      flex-direction: row;
+    }
+
+    label { // Search label
+      @include hide-contents;
+    }
+
+    input { // Search box
+      flex: auto;
+      width: 100%;
+      height: 2.2em;
+      padding: 0.5em;
+      margin-bottom: 0.5em;
+
+      @include mq-md-up {
+        width: auto;
+        margin-bottom: 0;
+      }
+    }
+
+    // Add button
+    button {
+      width: 100%;
+      margin: 0;
+      box-shadow: 2px 2px 5px 0 rgba($box-shadow-color, .2);
+
+      @include mq-md-up {
+        width: auto;
+        margin-left: 1em;
+      }
+    }
+  }
+
+  // DialogForm component
+  .DialogForm-form {
+    width: 100%;
+    height: 100%;
+    background-color: $color-white;
+
+    @include mq-md-up {
+      @include flex-container(row);
+      justify-content: space-between;
+      align-items: flex-start;
+      align-content: flex-start;
+    }
+
+    > * {
+      padding: 0.7em;
+
+      @include mq-md-up {
+        flex: none;
+      }
+    }
+
+    abbr {
+      text-decoration: none;
+    }
+  }
+
+  .DialogForm-photo {
+    width: 100%;
+
+    @include mq-md-up {
+      width: 30%;
+      min-width: 125px;
+    }
+
+    // Inner wrapper
+    > div {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      border: 1px solid $border-color;
+      position: relative;
+
+      @include mq-md-up {
+        width: 125px;
+        height: 125px;
+      }
+    }
+
+    label {
+      @include show-contents;
+      @include absolute-center;
+      width: 100%;
+
+      &.hide {
+        opacity: 0;
+      }
+    }
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      cursor: pointer;
+      opacity: 0; // Hide
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      box-shadow: 3px 3px 3px rgba($box-shadow-color, 0.5);
+    }
+  }
+
+  .DialogForm-detail {
+    width: 100%;
+
+    @include mq-md-up {
+      width: 70%;
+    }
+
+    > div { // Label/Input wrapper
+      margin-bottom: 0.6em;
+    }
+
+    label {
+      @include hide-contents;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      padding: 0.2em;
+      border: 1px solid $border-color;
+    }
+  }
+
+  .DialogForm-footnote {
+    width: 100%;
+    color: $color-grey;
+    font-size: 80%;
+    font-style: italic;
+    text-align: right;
+  }
+
+  // DialogButtons component
+  .DialogButtons {
+    width: 100%;
+
+    button {
+      width: auto;
+      margin: 0 1em 0 0;
+      box-shadow: 2px 2px 5px 0 rgba($box-shadow-color, .2);
+    }
+  }
+
+  .DialogButtons-warn {
+    background-color: $color-warn;
+  }
+
+  .DialogButtons-cancel {
+    background-color: $color-grey;
+  }
+
+  // ContactList component
+  .ContactList-not-found {
+    color: $color-grey;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+    padding: 2em 1em;
+  }
+
+  .ContactList {
+    width: 100%;
+  }
+
+  // ContactItem component
+  .ContactItem {
+    @include flex-container(row);
+    justify-content: space-around;
+    background-color: $color-white;
+    width: 100%;
+    padding: 0.4em;
+    border-bottom: 1px solid $border-color;
+
+    &:nth-child(even) {
+      background-color: $color-grey-light;
+    }
+  }
+
+  .ContactItem-photo {
+    flex: none;
+    width: 20%;
+    min-width: 50px;
+
+    img {
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+      border: 1px solid $border-color;
+      box-shadow: 2px 2px 3px rgba($box-shadow-color, 0.5);
+    }
+  }
+
+  .ContactItem-summary {
+    flex: auto;
+    text-align: left;
+    width: auto;
+
+    @include mq-md-up {
+      flex: none;
+      width: 65%;
+    }
+  }
+
+  .ContactItem-name {
+    font-weight: bold;
+    margin-bottom: 0.2em;
+  }
+
+  .ContactItem-email-phone {
+    color: $color-grey;
+    font-size: 75%;
+
+    span {
+      display: block;
+      margin-bottom: 0.3em;
+    }
+
+    // E-mail
+    a {
+      @include word-wrap;
+      color: $color-grey;
+      text-decoration: underline;
+
+      &:hover {
+        color: $color-blue;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .ContactItem-buttons {
+    flex: none;
+    text-align: center;
+    width: 15%;
+    min-width: 60px;
+
+    > button {
+      display: block;
+      background-color: $color-warn;
+      width: 60px;
+      padding: 0.3em 0.4em;
+
+      // Edit button
+      &:first-of-type {
+        background-color: $color-blue-light;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
