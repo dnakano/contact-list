@@ -13,7 +13,7 @@ The source codes are located in the **src/** directory:
 * **src/ContactListApp/stylesheets/** - Sass stylesheet to style the application
 * **src/components/** - Generic components (i.e. error message popup, dialog popup, etc.)
 * **src/stylesheets/** - Sass stylesheet used globally among all applications
-* **src/utils/** - Utility JavaScript functions used globally among all applications
+* **src/utils/** - JavaScript utility functions used globally among all applications
 
 ![Contact app](img/ContactListApp.PNG)
 
