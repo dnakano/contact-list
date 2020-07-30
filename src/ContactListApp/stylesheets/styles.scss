@@ -1,9 +1,8 @@
 // import partials
 @import "variables";
 @import "mixins";
-@import "placeholders";
 
-#ContactApp {
+#ContactListApp {
   // Buttons
   button {
     color: $color-white;
@@ -23,18 +22,6 @@
   // Errors
   .errorInput {
     border: 1px solid $color-warn;
-  }
-
-  .ErrorMessage {
-    display: inline-block;
-    width: 100%;
-    color: $color-warn;
-    font-style: italic;
-    text-align: left;
-
-    b, i {
-      @include word-wrap;
-    }
   }
 
   // Header component
@@ -80,8 +67,8 @@
     }
   }
 
-  // DialogForm component
-  .DialogForm-form {
+  // ContactForm component
+  .ContactForm {
     width: 100%;
     height: 100%;
     background-color: $color-white;
@@ -106,7 +93,7 @@
     }
   }
 
-  .DialogForm-photo {
+  .ContactForm-photo {
     width: 100%;
 
     @include mq-md-up {
@@ -157,12 +144,16 @@
     }
   }
 
-  .DialogForm-detail {
+  .ContactForm-detail {
     width: 100%;
 
     @include mq-md-up {
       width: 70%;
     }
+
+      @include mq-lg-up {
+        width: 68%;
+      }
 
     > div { // Label/Input wrapper
       margin-bottom: 0.6em;
@@ -180,7 +171,7 @@
     }
   }
 
-  .DialogForm-footnote {
+  .ContactForm-footnote {
     width: 100%;
     color: $color-grey;
     font-size: 80%;
@@ -188,8 +179,8 @@
     text-align: right;
   }
 
-  // DialogButtons component
-  .DialogButtons {
+  // ContactFormButtons component
+  .ContactFormButtons {
     width: 100%;
 
     button {
@@ -199,29 +190,31 @@
     }
   }
 
-  .DialogButtons-warn {
+  .ContactFormButtons-warn {
     background-color: $color-warn;
   }
 
-  .DialogButtons-cancel {
+  .ContactFormButtons-cancel {
     background-color: $color-grey;
   }
 
   // ContactList component
-  .ContactList-not-found {
+  .ContactList {
+    width: 100%;
+    height: 424px;
+    overflow: auto;
+  }
+
+  // Empty contact list
+  .ContactList-empty {
     color: $color-grey;
     font-style: italic;
     text-align: center;
-    width: 100%;
     padding: 2em 1em;
   }
 
-  .ContactList {
-    width: 100%;
-  }
-
-  // ContactItem component
-  .ContactItem {
+  // ContactListItem component
+  .ContactListItem {
     @include flex-container(row);
     justify-content: space-around;
     background-color: $color-white;
@@ -234,7 +227,7 @@
     }
   }
 
-  .ContactItem-photo {
+  .ContactListItem-photo {
     flex: none;
     width: 20%;
     min-width: 50px;
@@ -248,7 +241,7 @@
     }
   }
 
-  .ContactItem-summary {
+  .ContactListItem-summary {
     flex: auto;
     text-align: left;
     width: auto;
@@ -259,12 +252,12 @@
     }
   }
 
-  .ContactItem-name {
+  .ContactListItem-name {
     font-weight: bold;
     margin-bottom: 0.2em;
   }
 
-  .ContactItem-email-phone {
+  .ContactListItem-email-phone {
     color: $color-grey;
     font-size: 75%;
 
@@ -286,7 +279,7 @@
     }
   }
 
-  .ContactItem-buttons {
+  .ContactListItem-buttons {
     flex: none;
     text-align: center;
     width: 15%;
@@ -303,6 +296,19 @@
         background-color: $color-blue-light;
         margin-bottom: 0.5em;
       }
+    }
+  }
+
+  // Customize ContactDialog component's Modal styles
+  .ContactDialog-modal {
+    .Modal-box {
+      border: 1px solid $color-grey-light;
+      box-shadow: 2px 2px 5px 0 rgba($color-grey, .2);
+    }
+
+    .Modal-box-title {
+      color: $color-white;
+      background-color: $color-blue;
     }
   }
 }

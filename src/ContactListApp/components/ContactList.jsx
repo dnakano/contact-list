@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { sortByKey } from 'Utils/utils';
-import ContactItem from './ContactItem';
+import ContactListItem from './ContactListItem';
 
 // Create list of contacts
 function ContactList({
@@ -21,7 +21,7 @@ function ContactList({
   }
 
   const sortedContacts = sortByKey(contacts, 'first');
-  const contactItems = [];
+  const contactListItem = [];
 
   sortedContacts.forEach((contact) => {
 
@@ -36,8 +36,8 @@ function ContactList({
 
     // Return if contact is found
     if (found) {
-      contactItems.push(
-        <ContactItem
+      contactListItem.push(
+        <ContactListItem
           key={contact.id}
           contact={contact}
           onClick={handleClick}
@@ -48,12 +48,12 @@ function ContactList({
 
   // Return contact list or show not found msg
   return (
-    contactItems.length > 0 ? (
+    contactListItem.length > 0 ? (
       <ul className="ContactList">
-        {contactItems}
+        {contactListItem}
       </ul>
     ) : (
-      <p className="ContactList-not-found">
+      <p className="ContactList ContactList-empty">
         Contact not found.
       </p>
     )

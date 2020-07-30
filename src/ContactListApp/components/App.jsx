@@ -1,29 +1,27 @@
 import React from 'react';
-import ErrorBoundary from 'Components/ErrorBoundary';
+import ErrorChecker from 'Components/ErrorChecker';
 import Spinner from 'Components/Spinner';
 import HeaderContainer from './HeaderContainer';
 import ContactListContainer from './ContactListContainer';
 
-// Dynamically load DialogBoxContainer component and name it 'DialogBoxContainer' for webpackChunkName. For more info: https://webpack.js.org/guides/code-splitting/#dynamic-imports
-const DialogBoxContainer = React.lazy(() => import(/* webpackChunkName: 'DialogBoxContainer' */ './DialogBoxContainer'));
+// Dynamically load ContactDialogContainer component and name it 'ContactDialogContainer' for webpackChunkName. For more info: https://webpack.js.org/guides/code-splitting/#dynamic-imports
+const ContactDialogContainer = React.lazy(() => import(/* webpackChunkName: 'ContactDialogContainer' */ './ContactDialogContainer'));
 
 // Main app component
 function App() {
   return (
-    <div className="app-wrapper">
-      <React.StrictMode>
-        <ErrorBoundary>
-
+    <div className="apps-wrapper">
+      <ErrorChecker>
+        <>
           <HeaderContainer />
 
           <React.Suspense fallback={<Spinner />}>
-            <DialogBoxContainer />
+            <ContactDialogContainer />
           </React.Suspense>
 
           <ContactListContainer />
-
-        </ErrorBoundary>
-      </React.StrictMode>
+        </>
+      </ErrorChecker>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import { Buttons } from './actions/actionTypes';
 import reducer from './reducers';
-import { DefaultProfileImg, CONTACTS } from './assets/contactsData';
+import { CONTACTS, DefaultProfileImg } from './assets/contactsData';
 import App from './components/App';
 
 // Sass
@@ -39,5 +39,5 @@ render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('ContactApp')
+  document.getElementById('ContactListApp')
 );

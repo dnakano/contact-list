@@ -35,14 +35,15 @@ function Header({
 
   return (
     <form className="Header">
-      <label htmlFor="searchBox">Search</label>
+      <label htmlFor="ContactList-searchBox">Search</label>
 
       <input
         type="search"
-        id="searchBox"
-        name="searchBox"
-        placeholder="Search contact"
+        id="ContactList-searchBox"
+        name="q"
         value={searchText}
+        placeholder="Search contact"
+        autoComplete="off"
         onChange={handleChange}
       />
 
