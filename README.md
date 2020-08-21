@@ -5,15 +5,15 @@ The application is located on [my portfolio website](https://daisukenakano.com/i
 
 The source codes are located in the **src/** directory:
 * **src/ContactListApp/** - Contains source files used to create the contact list application.
-  * **src/ContactListApp/index.jsx** - Entry point of the application: Creates Redux store and mounts the application to DOM.
-  * **src/ContactListApp/actions/** - Defines and creates Redux action types and action creators.
-  * **src/ContactListApp/assets/** - Images and sample data files used to populate the list.
-  * **src/ContactListApp/components/** - React components written in JSX that create the application.
-  * **src/ContactListApp/reducers/** - Create Redux reducers.
-  * **src/ContactListApp/stylesheets/** - Sass stylesheet to style the application.
-* **src/components/** - Generic components (i.e. error message popup, dialog popup, etc.).
-* **src/stylesheets/** - Sass stylesheet used globally among all applications.
-* **src/utils/** - JavaScript utility functions used globally among all applications.
+  * **index.jsx** - Entry point of the application: Creates Redux store and mounts the application to DOM.
+  * **actions/** - Contains files that defines and creates Redux action types and action creators.
+  * **assets/** - Contains image and sample data files used to populate the list.
+  * **components/** - React components written in JSX that create the application.
+  * **reducers/** - Contains files that create Redux reducers.
+  * **stylesheets/** - Sass stylesheet to style the application.
+* **src/components/** - Generic components (i.e. error message popup, dialog popup, etc.) used in the application.
+* **src/stylesheets/** - Sass stylesheet used globally amongst all applications.
+* **src/utils/** - Utility functions written in JavaScript used globally amongst all applications.
 
 ![Contact app](img/ContactListApp.PNG)
 
