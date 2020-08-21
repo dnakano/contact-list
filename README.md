@@ -1,7 +1,7 @@
 # Contact List application
 The contact list application is written in [React](https://reactjs.org/) and [Redux](https://redux.js.org/) (for demonstration purpose only).
 
-The application is located on [my portfolio site](https://daisukenakano.com/index.php#spa).
+The application is located on [my portfolio site](https://daisukenakano.com/index.php#spa)
 
 The source codes are located in the **src/** directory:
 * **src/ContactListApp/** - Contains source files used to create the contact list application.
